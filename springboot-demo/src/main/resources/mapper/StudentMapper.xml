@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.StudentMapper">
+
+	<insert id="insert" parameterType="com.example.demo.domain.Student"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into tb_student(name, password, note) 
+		values(#{name}, #{password}, #{note})
+	</insert>
+	
+	<select id="find" parameterType="java.lang.Integer" 
+		resultType="com.example.demo.domain.Student">
+		select * from tb_student
+		where id=#{id}
+	</select>
+	
+	<select id="findAll" parameterType="java.lang.String"
+		resultType="com.example.demo.domain.Student">
+		select * from tb_student
+		where 1=1
+		<if test="name != null">
+			and name = #{name}
+		</if>
+		<if test="password != null">
+			and password = #{password}
+		</if>
+	</select>
+	
+	<update id="update" parameterType="com.example.demo.domain.Student">
+		update tb_student t
+		<set>
+			<if test="name != null">
+				t.name=#{name},
+			</if>
+			<if test="password != null">
+				t.password=#{password},
+			</if>
+			<if test="note != null">
+				t.note=#{note}
+			</if>
+		</set>
+		where t.id=#{id}
+	</update>
+
+</mapper>

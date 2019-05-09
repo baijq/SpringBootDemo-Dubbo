@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<title>login</title>
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+<!--[if IE]>
+<script src="js/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box">
+						<h3>欢迎你</h3>
+						<form action="user/login" name="f" method="post">
+							<div class="input_outer">
+								<span class="u_user"></span>
+								<input name="logname" class="text" id="logname" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+							</div>
+							<div class="input_outer">
+								<span class="us_uer"></span>
+								<input name="logpass" class="text" id="logpass" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+							</div>
+							<div class="mb2"><a type="submit" class="act-but submit" onclick="submit()" style="color: #FFFFFF">登录</a></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="js/TweenLite.min.js"></script>
+		<script src="js/EasePack.min.js"></script>
+		<script src="js/rAF.js"></script>
+		<script src="js/demo-1.js"></script>
+		<script type="text/javascript">
+			function submit() {
+				if($("#logname").val()!="" && $("#logpass").val()!=""){
+					$.ajax({
+						type : "post",
+						contentType : "application/json; charset=utf-8",
+						data : JSON.stringify(GetUserData()),
+						url : "/demo/user/login",
+						dataType : "JSON",
+						success : function(data) {
+ 							//alert("登录成功！");
+							window.location.href="/demo/index" 
+						}
+					})
+				}else{
+					alert("用户名或密码不能为空！");
+				}
+			}
+			function GetUserData(){
+				//alert( $("#logname").val());
+				var json = {
+					"name" : $("#logname").val(),
+					"pwd" : $("#logpass").val()
+					};
+				return json;
+			}
+		</script>
+	</body>
+</html>
