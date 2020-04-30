@@ -8,7 +8,7 @@ Dubbo 是一个分布式服务框架，致力于提供高性能和透明化的 R
 
 网站架构随着业务的发展，逻辑越来越复杂，数据量越来越大，交互越来越多.......
 
-![网站架构的发展历程](https://raw.githubusercontent.com/Baijq/others/master/images/dubbo-img/dubbo-1.png)
+![网站架构的发展历程](https://note.youdao.com/yws/api/personal/file/D402EA4804184A839BEB8B65655CD31C?method=download&shareKey=e5ad47ccf37c97f3cab246000ce11494)
 
 - 单一应用架构（OORM）
 
@@ -28,7 +28,7 @@ Dubbo 是一个分布式服务框架，致力于提供高性能和透明化的 R
 
 ### 2. dubbo核心工作原理
 
-![dubbo核心工作原理](https://raw.githubusercontent.com/Baijq/others/master/images/dubbo-img/dubbo-3.png)
+![dubbo核心工作原理](https://note.youdao.com/yws/api/personal/file/2C1D0FF81BAE4977A690D2073D997FCC?method=download&shareKey=07e664cb7040a5c1d45ed8b1ba180c28)
 
 节点 | 角色说明
 --|--
@@ -60,7 +60,7 @@ Container|服务运行容器
 
 3. 对比springcloud
 
-![dubbo和SpringCloud对比](https://raw.githubusercontent.com/Baijq/others/master/images/dubbo-img/dubbo-4.png)
+![dubbo和SpringCloud对比](https://note.youdao.com/yws/api/personal/file/8C1E02A8FBB344A0A4DD63DA245DBEF0?method=download&shareKey=39cc0e558b014e9c71b1e2c676b87353)
 
 ## 二、 springboot-Dubbo搭建
 
@@ -68,7 +68,7 @@ Container|服务运行容器
 
 直接上图，先大致看看项目结构：
 
-![dubbo示例项目结构](https://raw.githubusercontent.com/Baijq/others/master/images/dubbo-img/dubbo%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png)
+![dubbo示例项目结构](https://note.youdao.com/yws/api/personal/file/113EFBF4C33140BF9C90842753851434?method=download&shareKey=5ca0997d494f11eeac42fe3f33d9d5d2)
 
 dubbo-provider是所谓的服务提供者，springboot项目 
 
@@ -220,7 +220,7 @@ clientPort=2181
 
 如下图，说明dubbo-provider启动，并且已经连上注册中心
 
-![提供者启动](https://raw.githubusercontent.com/Baijq/others/master/images/dubbo-img/dubbo-provider%E5%90%AF%E5%8A%A8.png)
+![提供者启动](https://note.youdao.com/yws/api/personal/file/05ABF9BF1C1144F689B3711024D20FF5?method=download&shareKey=59c6212ae4b3d09568465774799dd654)
 
 #### 3. 启动服务消费方dubbo-consumer
 
@@ -229,6 +229,10 @@ clientPort=2181
 #### 4. 服务调用结果
 
 自己去试试，皮一下，，哈哈 QWQ
+
+## 三、项目地址
+
+[springboot-dubbo-demo](https://github.com/Baijq/SpringBootDemo/tree/master/springboot-dubbo)
 
 ## 注意点和问题
 
